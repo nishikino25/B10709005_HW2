@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/addpeople"
+        android:orderInCategory="100"
+        android:title="Add"
+        app:showAsAction="never"/>
+    <!--    要先去設定res/values/strings.xml才會啟動    -->
+    <item android:id="@+id/setting"
+        android:orderInCategory="100"
+        android:title="Settings"
+        app:showAsAction="never"/>
+</menu>
+    <!--    然後去MainActivity @override onCreateOptionsMenu() 把菜單加進去才會啟動    -->
+    <!--    接著用MainActivity @override onOptionsItemSelected() 偵測我按的是菜單的哪一項    -->
