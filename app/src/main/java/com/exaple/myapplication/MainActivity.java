@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
 
     //指定color傳到myAdapter的int circle，接著更新recyclerview，再用onBindViewholder刷新頁面
     public void setColor(String newColorKey) {
-        Log.e("shannon", "newcolorkey="+newColorKey);
+        Log.e("zhen", "newcolorkey="+newColorKey);
         if (newColorKey.equals(getString(R.string.pref_color_blue_value))) {
             Toast.makeText(this, "Exchange Blue", Toast.LENGTH_LONG).show();
             myAdapter.circle = 1;

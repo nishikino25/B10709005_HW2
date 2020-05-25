@@ -9,13 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SettingActivity"
+        <activity android:name=".AddActivity" />
+        <activity
+            android:name=".SettingActivity"
             android:label="@string/action_settings"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity"><!--父頁面為MainActivity-->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <!--父頁面為MainActivity-->
         <activity android:name=".MainActivity"
-            android:launchMode="singleTop">
-            <!--確保從SettingActivity回來時不會影響到MainActivity-->
+            android:launchMode="singleTop"> <!--確保從SettingActivity回來時不會影響到MainActivity-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
