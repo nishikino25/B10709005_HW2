@@ -1,6 +1,7 @@
 package com.exaple.myapplication;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
@@ -65,10 +66,12 @@ public class AddActivity extends AppCompatActivity {
 
     }
     public void addToWaitlist(View view){
+        Log.e("zhen", "do addToWaitlist1");
         //editText為空不能執行
         if(mNewPartySizeEditText.getText().length() == 0 || mNewGuestNameEditText.getText().length() == 0){
             return;
         }
+        Log.d("zhen", "do addToWaitlist2");
         int partySize = 1;
         try{
             partySize = Integer.parseInt(mNewPartySizeEditText.getText().toString());
@@ -79,13 +82,18 @@ public class AddActivity extends AppCompatActivity {
         //call addNewGuest with the guest name and party size
         addNewGuest(mNewGuestNameEditText.getText().toString(), partySize);
 
+        Intent intent = new Intent(AddActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+
+    }
+
+    public void goBack(View view) {
+//        onBackPressed(); //回前一頁
+
         //To make the UI look nice, call .getText().clear() on both EditTexts, also call clearFocus() on mNewPartySizeEditText
         mNewPartySizeEditText.clearFocus();
         mNewGuestNameEditText.getText().clear();
         mNewPartySizeEditText.getText().clear();
-    }
-
-    public void goBack(View view) {
-        onBackPressed();
     }
 }
